@@ -1,0 +1,124 @@
+/*
+ * Created on Thu Apr 16 2026
+ *
+ * Copyright (c) 2026 Your Company
+ */
+
+ .wrap {
+  position: relative;
+  background: var(--bg-camera);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+}
+
+/* Placeholder */
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  color: rgba(255, 255, 255, 0.45);
+  animation: fadeIn 0.4s ease;
+}
+
+.placeholder svg {
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+.placeholder h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.placeholder p {
+  font-size: 0.85rem;
+  text-align: center;
+  max-width: 260px;
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.55;
+}
+
+.enableBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-gradient);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 4px;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.enableBtn:hover  { opacity: 0.87; transform: translateY(-1px); }
+.enableBtn:active { transform: scale(0.97); }
+
+/* Video */
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scaleX(-1);
+  animation: fadeIn 0.35s ease;
+}
+
+/* Flash */
+.flashOverlay {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  pointer-events: none;
+  border-radius: var(--radius-sm);
+  animation: flash 0.28s ease forwards;
+}
+
+/* Capture btn */
+.captureBtn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 15px;
+  background: var(--capture-gradient);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+
+.captureBtn:hover:not(:disabled)  { opacity: 0.9; }
+.captureBtn:active:not(:disabled) { transform: scale(0.987); }
+
+.captureBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flash {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  100% { opacity: 0; }
+}

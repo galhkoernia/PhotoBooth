@@ -1,0 +1,57 @@
+/*
+ * Created on Thu Apr 16 2026
+ *
+ * Copyright (c) 2026 Your Company
+ */
+
+ .section {
+  margin-top: 18px;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.filterBtn {
+  padding: 10px 6px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #f8f8fc;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: background 0.16s, border-color 0.16s, color 0.16s, box-shadow 0.16s;
+  text-align: center;
+  line-height: 1;
+}
+
+.filterBtn:hover:not(.active) {
+  background: #ede9fe;
+  border-color: #c4b5fd;
+  color: #7c3aed;
+}
+
+.filterBtn.active {
+  background: var(--accent-gradient);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 2px 12px rgba(168, 85, 247, 0.35);
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
